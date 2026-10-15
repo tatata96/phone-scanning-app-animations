@@ -1,0 +1,69 @@
+@use 'breakpoints';
+
+:root {
+  --font-family-base: 'SF Pro Display', -apple-system, blinkmacsystemfont,
+    'Segoe UI', roboto, helvetica, arial, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  // Feature label
+  --type-feature-label-size: 16px;
+  --type-feature-label-line-height: 1;
+  --type-feature-label-letter-spacing: 2px;
+
+  // Feature title
+  --type-feature-title-size: 32px;
+  --type-feature-title-line-height: 40px;
+  --type-feature-title-letter-spacing: 0;
+
+  // Feature body
+  --type-feature-body-size: 14px;
+  --type-feature-body-line-height: 28px;
+  --type-feature-body-letter-spacing: 0;
+
+  // Button label
+  --type-button-label-size: 20px;
+  --type-button-label-line-height: 1;
+  --type-button-label-letter-spacing: 0;
+
+  @media (width >= #{breakpoints.$breakpoint-desktop}) {
+    --type-feature-body-size: 20px;
+    --type-feature-body-line-height: 32px;
+    --type-feature-body-letter-spacing: 0.8px;
+  }
+}
+
+body {
+  font-family: var(--font-family-base);
+}
+
+.type-feature-label {
+  font-size: var(--type-feature-label-size);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--type-feature-label-line-height);
+  text-transform: uppercase;
+  letter-spacing: var(--type-feature-label-letter-spacing);
+}
+
+.type-feature-title {
+  font-size: var(--type-feature-title-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-feature-title-line-height);
+  letter-spacing: var(--type-feature-title-letter-spacing);
+}
+
+.type-feature-body {
+  font-size: var(--type-feature-body-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-feature-body-line-height);
+  letter-spacing: var(--type-feature-body-letter-spacing);
+}
+
+.type-button-label {
+  font-size: var(--type-button-label-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-button-label-line-height);
+  letter-spacing: var(--type-button-label-letter-spacing);
+}
