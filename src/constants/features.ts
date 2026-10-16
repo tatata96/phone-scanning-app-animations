@@ -1,7 +1,12 @@
+import advancedFiltersIcon from '@/assets/features/advanced-filters/icon.svg?react';
 import advancedFiltersImage from '@/assets/features/advanced-filters/phone.png';
+import batchScanningIcon from '@/assets/features/batch-scanning/icon.svg?react';
 import batchScanningImage from '@/assets/features/batch-scanning/phone.png';
+import documentScannerIcon from '@/assets/features/document-scanner/icon.svg?react';
 import documentScannerImage from '@/assets/features/document-scanner/phone.png';
+import exportAndShareIcon from '@/assets/features/export-and-share/icon.svg?react';
 import exportAndShareImage from '@/assets/features/export-and-share/phone.png';
+import signAndStampIcon from '@/assets/features/sign-and-stamp/icon.svg?react';
 import signAndStampImage from '@/assets/features/sign-and-stamp/phone.png';
 import type { Feature } from '@/types/feature';
 
@@ -12,6 +17,7 @@ export const features: readonly Feature[] = [
     title: 'Scan with Ease',
     description:
       'Scan any document instantly with your mobile device by just a few steps. Save as PDF, JPG, ZIP, TXT and Word format.',
+    icon: documentScannerIcon,
     image: documentScannerImage,
   },
   {
@@ -20,6 +26,7 @@ export const features: readonly Feature[] = [
     title: 'One-Tap Focus',
     description:
       'Draw, scan or import your signature and stamp with a simple touch. Sign and stamp any document with just a single tap!',
+    icon: signAndStampIcon,
     image: signAndStampImage,
   },
   {
@@ -28,6 +35,7 @@ export const features: readonly Feature[] = [
     title: 'Multiple Page Scan',
     description:
       'Scan multiple pages or documents in multiple-scanning mode. Batch all scans as a single document.',
+    icon: batchScanningIcon,
     image: batchScanningImage,
   },
   {
@@ -36,6 +44,7 @@ export const features: readonly Feature[] = [
     title: 'Unique Filters',
     description:
       'Apply advanced filters and enhance quality with various custom made filters. Manually edit brightness and contrast by your own choice on the custom filters.',
+    icon: advancedFiltersIcon,
     image: advancedFiltersImage,
   },
   {
@@ -43,6 +52,7 @@ export const features: readonly Feature[] = [
     label: 'Export & Share',
     title: 'All-Round Conversion',
     description: 'Export your scans as PDF, JPG, ZIP, TXT and Word.',
+    icon: exportAndShareIcon,
     image: exportAndShareImage,
   },
 ];

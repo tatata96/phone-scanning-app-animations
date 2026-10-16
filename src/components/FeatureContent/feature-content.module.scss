@@ -10,7 +10,7 @@
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
-    padding: 64px 80px 0;
+    padding: 130px 10% 0 15%;
     text-align: right;
   }
 }
@@ -48,7 +48,7 @@
 }
 
 .button {
-  padding: 16px 24px;
+  padding: 15px 20px;
   color: var(--color-text);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -65,9 +65,15 @@
   max-width: 100%;
   height: auto;
 
+  // The exports have slightly different proportions.
+  // A fixed box keeps the panel, and so the tabs, from shifting between features.
+  aspect-ratio: 475 / 628;
+  object-fit: cover;
+  object-position: bottom;
+
   @include breakpoints.desktop {
     order: -1;
     align-self: flex-end;
-    width: 320px;
+    width: 360px;
   }
 }

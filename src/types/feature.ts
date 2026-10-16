@@ -1,3 +1,5 @@
+import type { ComponentType, SVGProps } from 'react';
+
 export type FeatureId =
   | 'document-scanner'
   | 'sign-and-stamp'
@@ -10,5 +12,6 @@ export interface Feature {
   label: string;
   title: string;
   description: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   image: string;
 }

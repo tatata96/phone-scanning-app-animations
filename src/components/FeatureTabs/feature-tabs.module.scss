@@ -13,19 +13,20 @@
 }
 
 .tab {
+  display: flex;
   flex: 0 0 auto;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
   padding: 24px;
   color: var(--color-text);
   white-space: nowrap;
   background: transparent;
   border: 0;
-  border-bottom: 3px solid transparent;
   cursor: pointer;
 
   &[aria-selected='true'] {
-    color: var(--color-accent);
     background: var(--color-accent-surface);
-    border-bottom-color: var(--color-accent);
   }
 
   &:focus-visible {
@@ -36,5 +37,16 @@
   @include breakpoints.desktop {
     flex: 1 1 0;
     padding: 24px 12px;
+  }
+}
+
+.icon {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  color: var(--color-icon);
+
+  .tab[aria-selected='true'] & {
+    color: var(--color-accent);
   }
 }

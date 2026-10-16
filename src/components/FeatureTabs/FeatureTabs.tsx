@@ -83,6 +83,7 @@ export function FeatureTabs({
     >
       {features.map((feature) => {
         const selected = feature.id === selectedId;
+        const Icon = feature.icon;
 
         return (
           <button
@@ -95,6 +96,7 @@ export function FeatureTabs({
             className={`type-button-label ${styles.tab}`}
             onClick={() => selectAndReveal(feature)}
           >
+            <Icon aria-hidden="true" className={styles.icon} />
             {feature.label}
           </button>
         );
