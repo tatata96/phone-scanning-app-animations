@@ -28,7 +28,7 @@
   --type-button-label-line-height: 1;
   --type-button-label-letter-spacing: 0;
 
-  @media (width >= #{breakpoints.$breakpoint-desktop}) {
+  @include breakpoints.desktop {
     --type-feature-body-size: 20px;
     --type-feature-body-line-height: 32px;
     --type-feature-body-letter-spacing: 0.8px;
