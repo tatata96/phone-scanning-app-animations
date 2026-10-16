@@ -10,4 +10,5 @@ export interface Feature {
   label: string;
   title: string;
   description: string;
+  image: string;
 }
