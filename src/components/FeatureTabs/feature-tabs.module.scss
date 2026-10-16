@@ -1,0 +1,40 @@
+@use '@/styles/breakpoints';
+
+.list {
+  display: flex;
+  overflow-x: auto;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab {
+  flex: 0 0 auto;
+  padding: 24px;
+  color: var(--color-text);
+  white-space: nowrap;
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+
+  &[aria-selected='true'] {
+    color: var(--color-accent);
+    background: var(--color-accent-surface);
+    border-bottom-color: var(--color-accent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -4px;
+  }
+
+  @include breakpoints.desktop {
+    flex: 1 1 0;
+    padding: 24px 12px;
+  }
+}

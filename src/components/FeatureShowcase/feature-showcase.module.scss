@@ -1,0 +1,9 @@
+.showcase {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background);
+}
+
+.panel {
+  min-height: 320px;
+}
