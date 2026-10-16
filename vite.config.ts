@@ -6,4 +6,9 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
 });

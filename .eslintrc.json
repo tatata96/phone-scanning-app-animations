@@ -18,7 +18,22 @@
         "project": "./tsconfig.json"
       },
       "rules": {
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "curly": ["error", "all"],
+        "func-style": ["error", "declaration"],
+        "padding-line-between-statements": [
+          "error",
+          {
+            "blankLine": "always",
+            "prev": ["const", "let", "var"],
+            "next": "*"
+          },
+          {
+            "blankLine": "any",
+            "prev": ["const", "let", "var"],
+            "next": ["const", "let", "var"]
+          }
+        ]
       },
       "settings": {
         "react": {

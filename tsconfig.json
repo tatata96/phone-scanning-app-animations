@@ -19,6 +19,8 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] },
     "jsx": "react-jsx"
   },
   "include": ["**/*.ts", "**/*.tsx"],
