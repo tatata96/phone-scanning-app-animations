@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react';
 
+import { BatchScanningScene } from '@/components/BatchScanningScene/BatchScanningScene';
 import { SignAndStampScene } from '@/components/SignAndStampScene/SignAndStampScene';
 import type { FeatureId } from '@/types/feature';
 
@@ -7,4 +8,5 @@ import type { FeatureId } from '@/types/feature';
 // Features without a scene just show the phone.
 export const featureScenes: Partial<Record<FeatureId, ComponentType>> = {
   'sign-and-stamp': SignAndStampScene,
+  'batch-scanning': BatchScanningScene,
 };

@@ -24,3 +24,16 @@
     animation: scale-up timing.$duration-scale-up timing.$easing-out $delay both;
   }
 }
+
+@mixin rise-in($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise-in timing.$duration-rise-in timing.$easing-out $delay both;
+  }
+}
+
+@mixin grow-in($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: grow-in timing.$duration-grow-in timing.$easing-out $delay both;
+    transform-origin: bottom center;
+  }
+}

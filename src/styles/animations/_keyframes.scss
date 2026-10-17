@@ -39,3 +39,23 @@
     transform: scale(1);
   }
 }
+
+@keyframes rise-in {
+  from {
+    transform: translateY(120%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes grow-in {
+  from {
+    transform: translateY(120%) scale(0.6);
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
