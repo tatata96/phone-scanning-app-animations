@@ -1,0 +1,14 @@
+@use './keyframes';
+@use './animation-timing-constants' as timing;
+
+@mixin slide-up($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: slide-up timing.$duration-slide-up timing.$easing-out $delay both;
+  }
+}
+
+@mixin fade-in($delay: timing.$delay-fade-in) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fade-in timing.$duration-fade-in timing.$easing-out $delay both;
+  }
+}

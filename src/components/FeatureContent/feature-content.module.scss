@@ -1,3 +1,4 @@
+@use '@/styles/animations';
 @use '@/styles/breakpoints';
 
 .content {
@@ -16,6 +17,8 @@
 }
 
 .text {
+  @include animations.fade-in;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +64,8 @@
 }
 
 .image {
+  @include animations.slide-up;
+
   width: 240px;
   max-width: 100%;
   height: auto;

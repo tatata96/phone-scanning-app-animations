@@ -29,7 +29,7 @@ export function FeatureShowcase() {
         aria-labelledby={getTabId(selected.id)}
         className={styles.panel}
       >
-        <FeatureContent feature={selected} />
+        <FeatureContent key={selected.id} feature={selected} />
       </div>
       <FeatureTabs
         features={features}
