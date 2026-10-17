@@ -6,3 +6,6 @@ $duration-draw-ring: 600ms;
 $duration-scale-up: 500ms;
 $duration-rise-in: 900ms;
 $duration-grow-in: 1500ms;
+
+// Scene overlays begin when the phone's slide-up is about two thirds done.
+$delay-scene-start: $duration-slide-up * 2 / 3;

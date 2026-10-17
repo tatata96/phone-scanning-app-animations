@@ -1,8 +1,9 @@
 @use '@/styles/animations';
 
-// Overlays start near the end of the phone's slide-up (1500ms), signature first.
-$signature-delay: 1000ms;
-$stamp-delay: 1250ms;
+// Overlays appear as the phone settles, signature first.
+$overlay-stagger: 250ms;
+$signature-delay: animations.$delay-scene-start;
+$stamp-delay: $signature-delay + $overlay-stagger;
 
 .signature,
 .stamp {

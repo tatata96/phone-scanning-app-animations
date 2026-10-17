@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react';
 
+import { AdvancedFiltersScene } from '@/components/AdvancedFiltersScene/AdvancedFiltersScene';
 import { BatchScanningScene } from '@/components/BatchScanningScene/BatchScanningScene';
 import { SignAndStampScene } from '@/components/SignAndStampScene/SignAndStampScene';
 import type { FeatureId } from '@/types/feature';
@@ -9,4 +10,5 @@ import type { FeatureId } from '@/types/feature';
 export const featureScenes: Partial<Record<FeatureId, ComponentType>> = {
   'sign-and-stamp': SignAndStampScene,
   'batch-scanning': BatchScanningScene,
+  'advanced-filters': AdvancedFiltersScene,
 };
