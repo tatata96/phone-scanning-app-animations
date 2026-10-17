@@ -18,7 +18,7 @@
   gap: 16px;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 12px 24px;
   color: var(--color-text);
   white-space: nowrap;
   background: transparent;
@@ -36,17 +36,6 @@
 
   @include breakpoints.desktop {
     flex: 1 1 0;
-    padding: 24px 12px;
-  }
-}
-
-.icon {
-  flex: 0 0 auto;
-  width: 32px;
-  height: 32px;
-  color: var(--color-icon);
-
-  .tab[aria-selected='true'] & {
-    color: var(--color-accent);
+    padding: 12px
   }
 }

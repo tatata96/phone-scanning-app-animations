@@ -12,3 +12,9 @@
     animation: fade-in timing.$duration-fade-in timing.$easing-out $delay both;
   }
 }
+
+@mixin draw-ring($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: draw-ring timing.$duration-draw-ring timing.$easing-out $delay both;
+  }
+}
