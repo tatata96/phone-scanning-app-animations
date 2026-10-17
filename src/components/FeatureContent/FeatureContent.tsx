@@ -1,3 +1,4 @@
+import { featureScenes } from '@/constants/featureScenes';
 import type { Feature } from '@/types/feature';
 import styles from './feature-content.module.scss';
 
@@ -6,6 +7,8 @@ interface FeatureContentProps {
 }
 
 export function FeatureContent({ feature }: FeatureContentProps) {
+  const Scene = featureScenes[feature.id];
+
   return (
     <div className={styles.content}>
       <div className={styles.text}>
@@ -22,11 +25,14 @@ export function FeatureContent({ feature }: FeatureContentProps) {
         </button>
       </div>
 
-      <img
-        src={feature.image}
-        alt={`${feature.label} shown on a phone`}
-        className={styles.image}
-      />
+      <div className={styles.phone}>
+        <img
+          src={feature.image}
+          alt={`${feature.label} shown on a phone`}
+          className={styles.image}
+        />
+        {Scene && <Scene />}
+      </div>
     </div>
   );
 }

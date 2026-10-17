@@ -1,0 +1,28 @@
+@use '@/styles/animations';
+
+// Overlays start near the end of the phone's slide-up (1500ms), signature first.
+$signature-delay: 1100ms;
+$stamp-delay: 1350ms;
+
+// Positions and sizes are percentages of the phone box so they hold at every phone width.
+.signature,
+.stamp {
+  position: absolute;
+  height: auto;
+}
+
+.signature {
+  @include animations.scale-up($signature-delay);
+
+  top: 53%;
+  left: -27%;
+  width: 54%;
+}
+
+.stamp {
+  @include animations.scale-up($stamp-delay);
+
+  top: 33%;
+  left: 67%;
+  width: 53%;
+}

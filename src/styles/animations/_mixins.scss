@@ -18,3 +18,9 @@
     animation: draw-ring timing.$duration-draw-ring timing.$easing-out $delay both;
   }
 }
+
+@mixin scale-up($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: scale-up timing.$duration-scale-up timing.$easing-out $delay both;
+  }
+}
