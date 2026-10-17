@@ -1,0 +1,46 @@
+@use '@/styles/animations';
+
+// Arrow first, then the cards fan out left to right.
+$file-duration: 650ms;
+$file-stagger: 250ms;
+$arrow-delay: animations.$delay-scene-start;
+$pdf-delay: $arrow-delay + $file-stagger;
+$jpg-delay: $pdf-delay + $file-stagger;
+$txt-delay: $jpg-delay + $file-stagger;
+
+.file {
+  position: absolute;
+  height: auto;
+}
+
+.arrow {
+  @include animations.rise-in-left($arrow-delay, $file-duration);
+
+  top: 86%;
+  left: -9%;
+  width: 6%;
+}
+
+.pdf {
+  @include animations.rise-in-left($pdf-delay, $file-duration);
+
+  top: 62%;
+  left: -5%;
+  width: 40%;
+}
+
+.jpg {
+  @include animations.rise-in($jpg-delay, $file-duration);
+
+  top: 57%;
+  left: 31%;
+  width: 32%;
+}
+
+.txt {
+  @include animations.rise-in-right($txt-delay, $file-duration);
+
+  top: 62%;
+  left: 68%;
+  width: 40%;
+}

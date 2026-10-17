@@ -25,9 +25,9 @@
   }
 }
 
-@mixin rise-in($delay: 0ms) {
+@mixin rise-in($delay: 0ms, $duration: timing.$duration-rise-in) {
   @media (prefers-reduced-motion: no-preference) {
-    animation: rise-in timing.$duration-rise-in timing.$easing-out $delay both;
+    animation: rise-in $duration timing.$easing-out $delay both;
   }
 }
 
@@ -35,5 +35,17 @@
   @media (prefers-reduced-motion: no-preference) {
     animation: grow-in timing.$duration-grow-in timing.$easing-out $delay both;
     transform-origin: bottom center;
+  }
+}
+
+@mixin rise-in-left($delay: 0ms, $duration: timing.$duration-rise-in) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise-in-left $duration timing.$easing-out $delay both;
+  }
+}
+
+@mixin rise-in-right($delay: 0ms, $duration: timing.$duration-rise-in) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise-in-right $duration timing.$easing-out $delay both;
   }
 }

@@ -42,7 +42,7 @@
 
 @keyframes rise-in {
   from {
-    transform: translateY(120%);
+    transform: translateY(160%);
   }
 
   to {
@@ -57,5 +57,25 @@
 
   to {
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes rise-in-left {
+  from {
+    transform: translate(40%, 190%) rotate(12deg);
+  }
+
+  to {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes rise-in-right {
+  from {
+    transform: translate(-40%, 160%) rotate(-12deg);
+  }
+
+  to {
+    transform: translate(0, 0) rotate(0);
   }
 }
