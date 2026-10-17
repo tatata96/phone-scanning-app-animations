@@ -2,8 +2,8 @@ import { useId, useState } from 'react';
 
 import { features } from '@/constants/features';
 import type { FeatureId } from '@/types/feature';
-import { FeatureContent } from '@/components/FeatureContent/FeatureContent';
-import { FeatureTabs } from '@/components/FeatureTabs/FeatureTabs';
+import { FeatureContent } from '@/components/feature-content/FeatureContent';
+import { FeatureTabs } from '@/components/feature-tabs/FeatureTabs';
 import styles from './feature-showcase.module.scss';
 
 export function FeatureShowcase() {

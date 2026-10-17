@@ -1,4 +1,4 @@
-import { FeatureShowcase } from './components/FeatureShowcase/FeatureShowcase';
+import { FeatureShowcase } from './components/feature-showcase/FeatureShowcase';
 
 export function App() {
   return (

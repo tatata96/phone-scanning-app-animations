@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import type { KeyboardEvent } from 'react';
 
 import type { Feature, FeatureId } from '@/types/feature';
-import { TabIcon } from '@/components/TabIcon/TabIcon';
+import { TabIcon } from '@/components/tab-icon/TabIcon';
 import styles from './feature-tabs.module.scss';
 
 interface FeatureTabsProps {
