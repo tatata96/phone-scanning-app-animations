@@ -1,4 +1,5 @@
 @use '@/styles/animations';
+@use '@/styles/animations/animation-timing-constants' as timing;
 @use '@/styles/breakpoints';
 
 .content {
@@ -75,11 +76,19 @@
   // A fixed box keeps the panel, and so the tabs, from shifting between features.
   aspect-ratio: 475 / 628;
 
+  @media (prefers-reduced-motion: no-preference) {
+    transition: opacity timing.$duration-fade-out ease-out;
+  }
+
   @include breakpoints.desktop {
     order: -1;
     align-self: flex-end;
     width: 360px;
   }
+}
+
+.exiting {
+  opacity: 0;
 }
 
 .image {

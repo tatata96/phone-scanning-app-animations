@@ -4,9 +4,15 @@ import styles from './feature-content.module.scss';
 
 interface FeatureContentProps {
   feature: Feature;
+  isExiting: boolean;
+  onExitComplete: () => void;
 }
 
-export function FeatureContent({ feature }: FeatureContentProps) {
+export function FeatureContent({
+  feature,
+  isExiting,
+  onExitComplete,
+}: FeatureContentProps) {
   const Scene = featureScenes[feature.id];
 
   return (
@@ -25,7 +31,18 @@ export function FeatureContent({ feature }: FeatureContentProps) {
         </button>
       </div>
 
-      <div className={styles.phone}>
+      <div
+        className={`${styles.phone} ${isExiting ? styles.exiting : ''}`}
+        onTransitionEnd={(event) => {
+          if (
+            isExiting &&
+            event.target === event.currentTarget &&
+            event.propertyName === 'opacity'
+          ) {
+            onExitComplete();
+          }
+        }}
+      >
         <img
           src={feature.image}
           alt={`${feature.label} shown on a phone`}

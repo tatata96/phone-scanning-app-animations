@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 
 import { features } from '@/constants/features';
 import type { FeatureId } from '@/types/feature';
@@ -8,6 +8,7 @@ import styles from './feature-showcase.module.scss';
 
 export function FeatureShowcase() {
   const [selectedId, setSelectedId] = useState<FeatureId>(features[0].id);
+  const [displayedId, setDisplayedId] = useState<FeatureId>(features[0].id);
   const baseId = useId();
   const panelId = `${baseId}-panel`;
 
@@ -15,7 +16,22 @@ export function FeatureShowcase() {
     return `${baseId}-tab-${id}`;
   }
 
-  const selected = features.find(({ id }) => id === selectedId) ?? features[0];
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function finishWithoutMotion() {
+      if (reducedMotion.matches) {
+        setDisplayedId(selectedId);
+      }
+    }
+
+    finishWithoutMotion();
+    reducedMotion.addEventListener('change', finishWithoutMotion);
+    return () =>
+      reducedMotion.removeEventListener('change', finishWithoutMotion);
+  }, [selectedId]);
+
+  const selected = features.find(({ id }) => id === displayedId) ?? features[0];
 
   if (!selected) {
     return null;
@@ -26,10 +42,15 @@ export function FeatureShowcase() {
       <div
         id={panelId}
         role="tabpanel"
-        aria-labelledby={getTabId(selected.id)}
+        aria-labelledby={getTabId(selectedId)}
         className={styles.panel}
       >
-        <FeatureContent key={selected.id} feature={selected} />
+        <FeatureContent
+          key={selected.id}
+          feature={selected}
+          isExiting={displayedId !== selectedId}
+          onExitComplete={() => setDisplayedId(selectedId)}
+        />
       </div>
       <FeatureTabs
         features={features}
