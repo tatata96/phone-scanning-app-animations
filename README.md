@@ -1,5 +1,7 @@
 # Phone Scanning App Animations
 
+**Live demo:** https://phone-scanning-app-animations.vercel.app/
+
 A responsive, mobile-first feature showcase for a document scanning app, built with React, TypeScript, and Vite. Five tabs pair feature descriptions with animated phone scenes:
 
 - Document Scanner
@@ -15,9 +17,6 @@ A responsive, mobile-first feature showcase for a document scanning app, built w
 - Animated selection rings around tab icons.
 - Mobile layouts with horizontally scrollable tabs and desktop layouts starting at 768px.
 - Keyboard navigation using Left/Right arrows, Home, and End, with linked ARIA tabs and panels and visible focus indicators.
-- Support for `prefers-reduced-motion`: scenes appear without animation and feature changes happen immediately.
-
-This is a frontend animation demo. Scanning, editing, and exporting are illustrated through local assets; the Learn More button currently has no action.
 
 ## Implementation
 
