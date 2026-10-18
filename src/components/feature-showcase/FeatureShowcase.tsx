@@ -42,7 +42,7 @@ export function FeatureShowcase() {
       <div
         id={panelId}
         role="tabpanel"
-        aria-labelledby={getTabId(selectedId)}
+        aria-labelledby={getTabId(displayedId)}
         className={styles.panel}
       >
         <FeatureContent

@@ -11,7 +11,7 @@ $page-stagger: 650ms;
 
 .page {
   position: absolute;
-  height: auto;
+  height: 100%;
 }
 
 .page-one {
@@ -19,7 +19,6 @@ $page-stagger: 650ms;
   @include animations.grow-in($page-delay);
 
   top: 5%;
-  height: 95%;
   left: 10%;
   width: 80%;
 }
@@ -28,7 +27,6 @@ $page-stagger: 650ms;
   @include animations.rise-in($page-delay + $page-stagger);
 
   top: 6%;
-  height: 93%;
   left: 3%;
   width: 95%;
 }
@@ -37,7 +35,6 @@ $page-stagger: 650ms;
   @include animations.rise-in($page-delay + 2 * $page-stagger);
 
   top: 10%;
-  height: 90%;
   left: 0%;
   width: 100%;
 }

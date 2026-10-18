@@ -93,6 +93,7 @@ export function FeatureTabs({
             role="tab"
             aria-selected={selected}
             aria-controls={panelId}
+            tabIndex={selected ? 0 : -1}
             className={`type-button-label ${styles.tab}`}
             onClick={() => selectAndReveal(feature)}
           >
