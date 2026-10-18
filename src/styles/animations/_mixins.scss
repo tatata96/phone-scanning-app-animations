@@ -1,0 +1,51 @@
+@use './keyframes';
+@use './animation-timing-constants' as timing;
+
+@mixin slide-up($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: slide-up timing.$duration-slide-up timing.$easing-out $delay both;
+  }
+}
+
+@mixin fade-in($delay: timing.$delay-fade-in) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fade-in timing.$duration-fade-in timing.$easing-out $delay both;
+  }
+}
+
+@mixin draw-ring($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: draw-ring timing.$duration-draw-ring timing.$easing-out $delay both;
+  }
+}
+
+@mixin scale-up($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: scale-up timing.$duration-scale-up timing.$easing-out $delay both;
+  }
+}
+
+@mixin rise-in($delay: 0ms, $duration: timing.$duration-rise-in) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise-in $duration timing.$easing-out $delay both;
+  }
+}
+
+@mixin grow-in($delay: 0ms) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: grow-in timing.$duration-grow-in timing.$easing-out $delay both;
+    transform-origin: bottom center;
+  }
+}
+
+@mixin rise-in-left($delay: 0ms, $duration: timing.$duration-rise-in) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise-in-left $duration timing.$easing-out $delay both;
+  }
+}
+
+@mixin rise-in-right($delay: 0ms, $duration: timing.$duration-rise-in) {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise-in-right $duration timing.$easing-out $delay both;
+  }
+}

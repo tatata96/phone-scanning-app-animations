@@ -1,3 +1,5 @@
+@use '@/styles/animations';
+@use '@/styles/animations/animation-timing-constants' as timing;
 @use '@/styles/breakpoints';
 
 .content {
@@ -16,6 +18,8 @@
 }
 
 .text {
+  @include animations.fade-in;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,20 +64,37 @@
   }
 }
 
-.image {
+.phone {
+  @include animations.slide-up;
+
+  position: relative;
+  isolation: isolate;
   width: 240px;
   max-width: 100%;
-  height: auto;
 
   // The exports have slightly different proportions.
   // A fixed box keeps the panel, and so the tabs, from shifting between features.
   aspect-ratio: 475 / 628;
-  object-fit: cover;
-  object-position: bottom;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: opacity timing.$duration-fade-out ease-out;
+  }
 
   @include breakpoints.desktop {
     order: -1;
     align-self: flex-end;
     width: 360px;
   }
+}
+
+.exiting {
+  opacity: 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
 }

@@ -1,0 +1,25 @@
+@use '@/styles/animations';
+
+// Sliders fade in as the phone settles, left first.
+$slider-stagger: 200ms;
+$brightness-delay: animations.$delay-scene-start;
+$contrast-delay: $brightness-delay + $slider-stagger;
+
+.brightness,
+.contrast {
+  position: absolute;
+  top: 21%;
+  width: 12%;
+}
+
+.brightness {
+  @include animations.fade-in($brightness-delay);
+
+  left: -8%;
+}
+
+.contrast {
+  @include animations.fade-in($contrast-delay);
+
+  right: -8%;
+}

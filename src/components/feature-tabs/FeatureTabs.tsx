@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import type { KeyboardEvent } from 'react';
 
 import type { Feature, FeatureId } from '@/types/feature';
+import { TabIcon } from '@/components/tab-icon/TabIcon';
 import styles from './feature-tabs.module.scss';
 
 interface FeatureTabsProps {
@@ -83,7 +84,6 @@ export function FeatureTabs({
     >
       {features.map((feature) => {
         const selected = feature.id === selectedId;
-        const Icon = feature.icon;
 
         return (
           <button
@@ -93,10 +93,11 @@ export function FeatureTabs({
             role="tab"
             aria-selected={selected}
             aria-controls={panelId}
+            tabIndex={selected ? 0 : -1}
             className={`type-button-label ${styles.tab}`}
             onClick={() => selectAndReveal(feature)}
           >
-            <Icon aria-hidden="true" className={styles.icon} />
+            <TabIcon icon={feature.icon} selected={selected} />
             {feature.label}
           </button>
         );

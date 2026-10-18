@@ -1,0 +1,40 @@
+@use '@/styles/animations';
+
+$page-delay: animations.$delay-scene-start;
+$page-stagger: 650ms;
+
+.screen {
+  position: absolute;
+  inset: 20% 10% 0;
+  overflow: clip;
+}
+
+.page {
+  position: absolute;
+  height: 100%;
+}
+
+.page-one {
+  // The first page grows into the foreground, the pages after it rise up over it.
+  @include animations.grow-in($page-delay);
+
+  top: 5%;
+  left: 10%;
+  width: 80%;
+}
+
+.page-two {
+  @include animations.rise-in($page-delay + $page-stagger);
+
+  top: 6%;
+  left: 3%;
+  width: 95%;
+}
+
+.page-three {
+  @include animations.rise-in($page-delay + 2 * $page-stagger);
+
+  top: 10%;
+  left: 0%;
+  width: 100%;
+}
