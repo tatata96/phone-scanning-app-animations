@@ -1,6 +1,6 @@
 @use '@/styles/animations';
 
-$page-delay: 400ms;
+$page-delay: animations.$delay-scene-start;
 $page-stagger: 650ms;
 
 .screen {
